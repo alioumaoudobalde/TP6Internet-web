@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP6 Question 3 (corrigée)</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .button {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        #button1 {
+            background-color: #3498db; 
+        }
+        #button2 {
+            background-color: #2ecc71;
+        }
+        #button3 {
+            background-color: #e67e22;
+        }
+
+        /* Effet au survol */
+        .button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        /* Contenu caché au départ */
+        #content1, #content2, #content3 {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        img {
+            width: 150px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        #clear {
+            background-color: #e74c3c; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Animations – TP6 Question 3</h2>
+
+    <button class="button" id="button1">Bouton 1</button>
+    <button class="button" id="button2">Bouton 2</button>
+    <button class="button" id="button3">Bouton 3</button>
+    <button class="button" id="clear">Clear</button>
+
+    <div id="content1">
+        <p>Contenu du Bouton 1</p>
+        <img src="images/js.jpg" alt="Image Bouton 1">
+    </div>
+    <div id="content2">
+        <p>Contenu du Bouton 2</p>
+        <img src="images/js2.jpg" alt="Image Bouton 2">
+    </div>
+    <div id="content3">
+        <p>Contenu du Bouton 3</p>
+        <img src="images/js3.jpg" alt="Image Bouton 3">
+    </div>
+
+    <script>
+        // Seul le bouton 2 affiche son contenu
+        $("#button2").click(function() {
+            $("#content1, #content3").hide(); 
+            $("#content2").fadeToggle();
+        });
+
+        // Les autres boutons ne font rien
+        $("#button1, #button3").click(function() {
+            alert("Seul le bouton 2 affiche son contenu !");
+        });
+
+        // Bouton Clear pour tout masquer
+        $("#clear").click(function() {
+            $("#content1, #content2, #content3").fadeOut();
+        });
+    </script>
+</body>
+</html>

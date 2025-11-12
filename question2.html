@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP6 Question 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .image-container img {
+            margin-right: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .image-container img:hover {
+            border-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="images/js.jpg" alt="js" id="js">
+        <img src="images/js2.jpg" alt="js2" id="js2">
+    </div>
+    <p id="texte">Texte à afficher ou masquer : Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi enim illo doloribus culpa fuga magnam itaque earum numquam ut est, cupiditate aliquam eligendi dolor nam eius cum totam optio corporis.</p>
+
+    <script>
+        $("#js").click(function() {
+            $("#texte").fadeIn();
+        });
+        $("#js2").click(function() {
+            $("#texte").fadeOut();
+        });
+    </script>
+</body>
+</html>

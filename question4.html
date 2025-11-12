@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP6 Question 4</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Container for the hand */
+        .cards {
+            position: relative;
+            width: 320px; 
+            height: 260px;
+            margin: 40px auto;
+        }
+
+        /* Toutes les images positionnées absolument pour superposition */
+        .cards img {
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+
+    
+        #roi  { z-index: 4; left: 120px; }
+        #dame { z-index: 3; left: 80px;  }
+        #valet{ z-index: 2; left: 40px;  }
+        #dix  { z-index: 1; left: 0px;   }
+
+        /* Effet de soulèvement au survol */
+        .cards img:hover { transform: translateY(-10px); }
+
+        
+        #roi:hover {
+            content: url("images/as.jpg");
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="cards">
+        <img src="images/roi.jpg"  alt="Roi"  id="roi">
+        <img src="images/dame.jpg" alt="Dame" id="dame">
+        <img src="images/valet.jpg" alt="Valet" id="valet">
+        <img src="images/10.jpg"   alt="10"   id="dix">
+    </div>
+
+    <script>
+        // jQuery pour remplacer la 10 par l'as au survol (puis revenir)
+        $("#dix").hover(function() {
+            $(this).attr("src", "images/as.jpg");
+        }, function() {
+            $(this).attr("src", "images/10.jpg");
+        });
+    </script>
+</body>
+</html>

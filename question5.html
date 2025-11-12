@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP6 Question 5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+        }
+        .menu > li {
+            display: inline-block;
+            position: relative;
+        }
+        .menu > li > a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .menu > li:hover > a {
+            background-color: #555;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        }
+        .submenu li a {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .submenu li a:hover {
+            background-color: #666;
+        }
+        .menu li:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">Entrées</a>
+            <ul class="submenu">
+                <li><a href="soupe.html">Soupe</a></li>
+                <li><a href="salade.html">Salade</a></li>
+                <li><a href="foutou.html">Foutou</a></li>
+                <li><a href="akassa.html">Akassa</a></li>
+                <li><a href="Pizza.html">Pizza</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Plats</a>
+            <ul class="submenu">
+                <li><a href="poisson.html">Poisson</a></li>
+                <li><a href="poulet.html">Poulet</a></li>
+                 <li><a href="yassa.html">Yassa</a></li>
+                <li><a href="thiep.html">Thiep</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
